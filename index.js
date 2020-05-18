@@ -63,43 +63,16 @@ fetch(url)
 
 // Modal Part //
 const overlay = document.getElementById('overlay');
+const wrap = document.getElementById('wrap');
 
 wrap.addEventListener('click', (e) => {
-        if (e.target.tagName === 'SECTION') {
-            console.log(e.target);
+    console.log(e.target);
+    if (e.target.tagName === 'SECTION' 
+        || e.target.tagName === 'IMG' 
+        || e.target.tagName ==='DIV')
+         {  console.log(e.target);
             overlay.style.display = 'flex';
-            console.log(overlay.style.display);
         }
 
     });
-
-
-// function generateImage(data) {
-//     const img = document.createElement('img')
-//     img.src = data;
-//     card.insertBefore(img, card.childNoder);
-// }
-
-// function generateName (data) {
-//     const name = data;
-//     const p = document.createElement('p');
-//     p.innerHTML = name;
-//     info.appendChild(p);
-
-// }
-
-// function generateEmail (data) {
-//     const email = data;
-//     const emailDiv = document.createElement('a');
-//     emailDiv.innerHTML = email;
-//     info.appendChild(emailDiv);
-// }
-
-// function generateLocation (data) {
-//     const location = data;
-//     const p = document.createElement('p');
-//     p.innerHTML = location;
-//     info.appendChild(p);
-// }
-
 
