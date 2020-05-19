@@ -17,7 +17,7 @@ img {
 }
 
 /* container */
-.container {
+#wrap {
     padding: 0 30px;
     display: flex;
     flex-wrap: wrap;
@@ -44,11 +44,13 @@ img {
 
 .info h2 {
     margin: 0;
+    font-size: 1.2rem;
 }
 
 .info a,
 .info p {
     color: #888888;
+    font-size: 0.8rem;
 }
 
 .info p {
@@ -68,11 +70,85 @@ img {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* #overlay p {
+#modal-window {
     display: none;
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 30px;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    text-align: center;
+    top: 34%;
+    left: 34%;
     z-index: 2;
+    width: 400px;
+    border-radius: 3%;
     background-color: white;
-} */
+}
+
+#modal-window p,
+#modal-window a {
+    color: #888888;
+}
+
+#modal-window h2 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+#modal-window p {
+    margin: 0;
+}
+
+.detailed-wrap {
+    display: none;
+}
+
+.new-div {
+    padding: 15px 0;
+    margin: 0 50px;
+    border-bottom: 1px solid #888888;
+}
+
+.detailed-display-wrap {
+    padding: 15px 0;
+    padding-bottom: 0;
+
+}
+
+.new-div,
+.detailed-display-wrap {
+    font-size: 0.8rem;
+}
+
+.close-div {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    color: black;
+    text-align: right;
+}
+
+.close-div p {
+    font-size: 30px;
+}
+
+.right-arrow-div {
+    position: absolute;
+    top: 35%;
+    right: -20%;
+    font-size: 4rem;
+    color: white;
+    text-align: right
+
+}
+
+.left-arrow-div {
+    position: absolute;
+    top: 35%;
+    left: -20%;
+    font-size: 4rem;
+    color: white;
+    text-align: right
+
+}
+
