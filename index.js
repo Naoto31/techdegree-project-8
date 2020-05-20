@@ -126,7 +126,7 @@ wrap.addEventListener('click', (e) => {
 
 
     }
-    
+
     if (e.target.tagName === 'H2' ||
         e.target.tagName === 'A' ||
         e.target.tagName === 'P') {
@@ -204,8 +204,6 @@ function popUp(info, imageSrc) {
     modalWindow.appendChild(leftArrowDiv);
     leftArrowDiv.className = 'left-arrow-div';
     leftArrowDiv.innerHTML = '<';
-
-    console.log(imageDiv);
 
 }
 
