@@ -122,11 +122,11 @@ wrap.addEventListener('click', (e) => {
         const imageSrc = e.target.childNodes[1].src;
 
         popUp(info, imageSrc);
-        arrowFunction()
         closeFunction();
-        
-        
+
+
     }
+    
     if (e.target.tagName === 'H2' ||
         e.target.tagName === 'A' ||
         e.target.tagName === 'P') {
@@ -137,11 +137,10 @@ wrap.addEventListener('click', (e) => {
         const imageSrc = sectionCard.childNodes[1].src;
 
         popUp(info, imageSrc);
-        arrowFunction();
         closeFunction();
-        
 
     }
+
     if (e.target.tagName === 'IMG') {
         overlay.style.display = 'flex';
         modalWindow.style.display = 'block';
@@ -150,9 +149,8 @@ wrap.addEventListener('click', (e) => {
         const imageSrc = sectionCard.childNodes[1].src;
 
         popUp(info, imageSrc);
-        arrowFunction();
         closeFunction();
-        
+
 
     }
 
@@ -264,36 +262,39 @@ function closeFunction() {
     });
 }
 
-// Arrow Function
-function arrowFunction() {
-    // Right Arrow for Displaying the Next Person
-    rightArrowDiv.addEventListener('click', () => {
 
-        for (let i = 0; i < cards.length; i += 1)
-            if (imageDiv.firstElementChild.src === cards[i].lastElementChild.src) {
-                const nextSection = cards[i + 1];
-                const nextInfo = nextSection.childNodes[0];
-                const nextImageSrc = nextSection.childNodes[1].src;
-                nextPerson(nextInfo, nextImageSrc);
-                break;
-            } 
-            
-    });
+// Back and forth event listner
+// Right Arrow for Displaying the Next Person
+rightArrowDiv.addEventListener('click', () => {
 
-    // Left Arrow for Displaying the Previous Person
-    leftArrowDiv.addEventListener('click', () => {
-        for (let i = 0; i < cards.length; i += 1) {
-            if (imageDiv.firstElementChild.src === cards[i].lastElementChild.src) {
-                const previousSection = cards[i - 1];
-                const previousInfo = previousSection.childNodes[0];
-                const previousImageSrc = previousSection.childNodes[1].src;
-                previousPerson(previousInfo, previousImageSrc);
-                break;
-
-            }
+    for (let i = 0; i < cards.length; i += 1)
+        if (imageDiv.firstElementChild.src === cards[i].lastElementChild.src) {
+            const nextSection = cards[i + 1];
+            const nextInfo = nextSection.childNodes[0];
+            const nextImageSrc = nextSection.childNodes[1].src;
+            nextPerson(nextInfo, nextImageSrc);
+            break;
         }
-    });
-}
+
+    closeFunction();
+
+});
+
+// Left Arrow for Displaying the Previous Person
+leftArrowDiv.addEventListener('click', () => {
+    for (let i = 0; i < cards.length; i += 1) {
+        if (imageDiv.firstElementChild.src === cards[i].lastElementChild.src) {
+            const previousSection = cards[i - 1];
+            const previousInfo = previousSection.childNodes[0];
+            const previousImageSrc = previousSection.childNodes[1].src;
+            previousPerson(previousInfo, previousImageSrc);
+            break;
+
+        }
+    }
+    closeFunction();
+});
+
 
 // Search/Filter Function
 function nameFilterFunction() {
@@ -301,7 +302,7 @@ function nameFilterFunction() {
     const filter = input.value.toUpperCase();
     console.log(input);
     console.log(filter);
-    
+
     for (i = 0; i < cards.length; i += 1) {
         searchName = cards[i].firstElementChild.getElementsByTagName('h2')[0];
         txtValue = searchName.textContent || serachName.innerText;
@@ -313,4 +314,3 @@ function nameFilterFunction() {
     }
 
 }
-
