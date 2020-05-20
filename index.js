@@ -1,5 +1,5 @@
 const wrap = document.getElementById('wrap');
-const url = 'https://randomuser.me/api/?results=12';
+const url = 'https://randomuser.me/api/?results=12&&nat=ie';
 
 // ------------------------------------------
 //  FETCH FUNCTIONS
@@ -294,3 +294,23 @@ function arrowFunction() {
         }
     });
 }
+
+// Search/Filter Function
+function nameFilterFunction() {
+    const input = document.getElementById('name');
+    const filter = input.value.toUpperCase();
+    console.log(input);
+    console.log(filter);
+    
+    for (i = 0; i < cards.length; i += 1) {
+        searchName = cards[i].firstElementChild.getElementsByTagName('h2')[0];
+        txtValue = searchName.textContent || serachName.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            cards[i].style.display = '';
+        } else {
+            cards[i].style.display = 'none';
+        }
+    }
+
+}
+
