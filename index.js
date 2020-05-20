@@ -122,8 +122,9 @@ wrap.addEventListener('click', (e) => {
         const imageSrc = e.target.childNodes[1].src;
 
         popUp(info, imageSrc);
-        closeFunction();
         arrowFunction()
+        closeFunction();
+        
         
     }
     if (e.target.tagName === 'H2' ||
@@ -136,9 +137,9 @@ wrap.addEventListener('click', (e) => {
         const imageSrc = sectionCard.childNodes[1].src;
 
         popUp(info, imageSrc);
-        closeFunction();
         arrowFunction();
-
+        closeFunction();
+        
 
     }
     if (e.target.tagName === 'IMG') {
@@ -149,8 +150,9 @@ wrap.addEventListener('click', (e) => {
         const imageSrc = sectionCard.childNodes[1].src;
 
         popUp(info, imageSrc);
-        closeFunction();
         arrowFunction();
+        closeFunction();
+        
 
     }
 
@@ -205,6 +207,7 @@ function popUp(info, imageSrc) {
     leftArrowDiv.className = 'left-arrow-div';
     leftArrowDiv.innerHTML = '<';
 
+    console.log(imageDiv);
 
 }
 
@@ -274,6 +277,7 @@ function arrowFunction() {
                 nextPerson(nextInfo, nextImageSrc);
                 break;
             } 
+            
     });
 
     // Left Arrow for Displaying the Previous Person
